@@ -31,7 +31,7 @@ class UserController(val userService: UserService) {
     fun apagarUsuario (@PathVariable id : Long) :ResponseEntity<String>{
         val apagado = userService.apagar( id )
         if (apagado){
-            return ResponseEntity("Contato com id: $id apagado com sucesso",HttpStatus.ACCEPTED)
+            return ResponseEntity("Usuário com id: $id apagado com sucesso",HttpStatus.ACCEPTED)
         }else{
             return ResponseEntity("Id $id não foi encontrado", HttpStatus.NOT_FOUND)
         }

@@ -31,4 +31,13 @@ class UserService(val userRepository: UserRepository) {
         return userRepository.findAll()
     }
 
+    fun atualizar(id : Long, novoUser : User) : Boolean {
+        val encontrado = userRepository.findById(id).isPresent
+        if (encontrado) {
+            novoUser.id = id
+            userRepository.save(novoUser)
+        }
+        return encontrado
+    }
+
 }
