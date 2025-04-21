@@ -29,12 +29,12 @@ class ImageService(val imageRepository: ImageRepository) {
         return imageRepository.findAll()
     }
 
-//    fun atualizar(id : Long, novoimage : Image) : Boolean {
-//        val encontrado = imageRepository.findById(id).isPresent
-//        if (encontrado) {
-//            novoimage.id = id
-//            imageRepository.save(novoimage)
-//        }
-//        return encontrado
-//    }
+    fun atualizar(id : Long, novoimage : Image) : Boolean {
+        val encontrado = imageRepository.findById(id).isPresent
+        if (encontrado) {
+            novoimage.id = id
+            imageRepository.save(novoimage)
+        }
+        return encontrado
+    }
 }
