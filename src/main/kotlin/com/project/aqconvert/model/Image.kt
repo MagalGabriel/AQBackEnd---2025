@@ -1,14 +1,12 @@
 package com.project.aqconvert.model
 
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.TableGenerator
+import jakarta.persistence.*
 
+@Entity
 data class Image(
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "contato-generator")
-    @TableGenerator(name = "contato-generator",
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "image-generator")
+    @TableGenerator(name = "image-generator",
         table = "id_sequences",
         pkColumnName = "seq_id",
         valueColumnName = "seq_value")

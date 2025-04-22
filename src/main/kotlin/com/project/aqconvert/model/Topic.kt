@@ -1,23 +1,30 @@
 package com.project.aqconvert.model
 
+import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
+import jakarta.persistence.ManyToOne
+import jakarta.persistence.OneToMany
 import jakarta.persistence.TableGenerator
 import java.util.Objects
 
+@Entity
 data class Topic(
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "contato-generator")
-    @TableGenerator(name = "contato-generator",
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "topic-generator")
+    @TableGenerator(name = "topic-generator",
         table = "id_sequences",
         pkColumnName = "seq_id",
         valueColumnName = "seq_value")
     var id : Long?,
-    val materia : Objects,
+//    @ManyToOne
+//    val materia : Subject,
     val nome : String,
-    val questions : Objects,
+//    @OneToMany
+//    val questions : Question,
     //pensar como aplicar as variaveis de imagem
 
 
 )
+//TÓPICO OU ASSUNTO

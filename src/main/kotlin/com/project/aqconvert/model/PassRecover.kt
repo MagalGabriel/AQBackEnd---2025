@@ -1,18 +1,17 @@
 package com.project.aqconvert.model
 
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.TableGenerator
+import jakarta.persistence.*
 
+@Entity
 data class PassRecover(
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "contato-generator")
-    @TableGenerator(name = "contato-generator",
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "passrecover-generator")
+    @TableGenerator(name = "passrecover-generator",
         table = "id_sequences",
         pkColumnName = "seq_id",
         valueColumnName = "seq_value")
     var id : Long?,
-    val user : User,
+//    @ManyToOne
+//    val user : User,
     val number : Number
 )

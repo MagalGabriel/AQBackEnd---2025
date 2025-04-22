@@ -1,15 +1,13 @@
 package com.project.aqconvert.model
 
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.TableGenerator
+import jakarta.persistence.*
 import java.util.Date
 
+@Entity
 data class Calendar(
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "contato-generator")
-    @TableGenerator(name = "contato-generator",
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "calendar-generator")
+    @TableGenerator(name = "calendar-generator",
         table = "id_sequences",
         pkColumnName = "seq_id",
         valueColumnName = "seq_value")

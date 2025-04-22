@@ -1,25 +1,27 @@
 package com.project.aqconvert.model
 
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.TableGenerator
+import jakarta.persistence.*
 
+@Entity
 data class Historic(
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "contato-generator")
-    @TableGenerator(name = "contato-generator",
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "historic-generator")
+    @TableGenerator(name = "historic-generator",
         table = "id_sequences",
         pkColumnName = "seq_id",
         valueColumnName = "seq_value")
     var id : Long?,
-    val questao : Question,
+//    @OneToMany
+//    val questao : Question,
     val respeRegistrada : Number,
     val acerto : Boolean,
     val qtdAcertos : Number,
     val qtdErros : Number,
-    val tipoSimulado : Subject,
-    val assunto : Topic,
-    val user : User,
+//    @OneToMany
+//    val tipoSimulado : Subject,
+//    @OneToMany
+//    val assunto : Topic,
+//    @ManyToOne
+//    val user : User,
     val tempoTotal : Number
 )

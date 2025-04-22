@@ -1,38 +1,25 @@
 package com.project.aqconvert.model
 
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.TableGenerator
+import jakarta.persistence.*
 import java.util.Objects
 
+@Entity
 data class Subject(
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "contato-generator")
-    @TableGenerator(name = "contato-generator",
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "subject-generator")
+    @TableGenerator(name = "subject-generator",
         table = "id_sequences",
         pkColumnName = "seq_id",
         valueColumnName = "seq_value")
     var id : Long?,
-    val pertence : Array<String> = arrayOf( "Ciências da Natureza", "Ciências Humanas",
-        "Matemática", "Linguagens"),
+    val materiaPertence : String,
     val nome : String,
     //pensar como aplicar as variaveis de imagem
 )
+//MATÉRIA
 
 
 
-{
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
 
-        other as Subject
 
-        return pertence.contentEquals(other.pertence)
-    }
 
-    override fun hashCode(): Int {
-        return pertence.contentHashCode()
-    }
-}

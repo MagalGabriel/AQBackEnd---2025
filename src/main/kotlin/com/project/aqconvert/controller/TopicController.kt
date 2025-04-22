@@ -40,5 +40,5 @@ class TopicController(val topicService: TopicService) {
             ResponseEntity("ID não encontrado", HttpStatus.NOT_FOUND)
         }
     }
-    
+
 }

@@ -1,5 +1,6 @@
 package com.project.aqconvert.model
 
+import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
@@ -7,10 +8,11 @@ import jakarta.persistence.TableGenerator
 import java.util.Date
 import java.util.Objects
 
+@Entity
 data class User(
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "contato-generator")
-    @TableGenerator(name = "contato-generator",
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "user-generator")
+    @TableGenerator(name = "user-generator",
         table = "id_sequences",
         pkColumnName = "seq_id",
         valueColumnName = "seq_value")
