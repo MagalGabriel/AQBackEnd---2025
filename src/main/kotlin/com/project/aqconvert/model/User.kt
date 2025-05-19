@@ -5,7 +5,7 @@ import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.TableGenerator
-import java.util.Date
+import java.sql.Date
 
 
 @Entity
@@ -19,7 +19,7 @@ data class User(
     var id : Long?,
     val nome : String,
     val nomeUsuario : String,
-    //val dataNasc : Date,
+    val dataNasc : Date,
     val email : String,
     val numCelular : String,
     val senha : String,

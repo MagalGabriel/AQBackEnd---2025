@@ -1,7 +1,7 @@
 package com.project.aqconvert.model
 
 import jakarta.persistence.*
-import java.util.Date
+import java.sql.Date
 
 @Entity
 data class Calendar(
@@ -12,7 +12,7 @@ data class Calendar(
         pkColumnName = "seq_id",
         valueColumnName = "seq_value")
     var id : Long?,
-    //val data : Date,
+    val data : Date,
     val periodo : String,
     val linkReferencia : String
 )
