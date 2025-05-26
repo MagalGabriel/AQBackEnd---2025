@@ -14,6 +14,6 @@ data class Question(
     val enunciado : String,
     val pergunta : String,
     // pensar em como fazer o esquema de alternativas
-    val lugarAno : String,
+    //val lugarAno : String,
     //pensar como aplicar as variaveis de imagem
 )

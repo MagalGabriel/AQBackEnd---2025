@@ -7,7 +7,6 @@ import jakarta.persistence.Id
 import jakarta.persistence.ManyToOne
 import jakarta.persistence.OneToMany
 import jakarta.persistence.TableGenerator
-import java.util.Objects
 
 @Entity
 data class Topic(
@@ -18,11 +17,11 @@ data class Topic(
         pkColumnName = "seq_id",
         valueColumnName = "seq_value")
     var id : Long?,
-//    @ManyToOne
-//    val materia : Subject,
+    @ManyToOne
+    val materia : Subject,
     val nome : String,
-//    @OneToMany
-//    val questions : Question,
+    @OneToMany
+    val questions : Question,
     //pensar como aplicar as variaveis de imagem
 
 
