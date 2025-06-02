@@ -6,8 +6,8 @@ import com.project.aqconvert.model.Subject
 
 data class TopicDTOView (
     var id : Long?,
-    var materia : Subject,
+    var materia : String,
     var nome : String,
-    var questions : Question
+    //var questions : Question
 
     )

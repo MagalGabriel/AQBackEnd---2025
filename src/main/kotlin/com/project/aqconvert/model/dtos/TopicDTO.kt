@@ -4,9 +4,8 @@ import jakarta.validation.constraints.Min
 
 data class TopicDTO (
     var id : Long,
-    @field:Min(1)
-    val materiaId : Long,
+    val materia : String,
     val nome : String,
-    @field:Min(1)
-    val questionsId : Long
+   // @field:Min(1)
+    //val questionsId : Long
     )

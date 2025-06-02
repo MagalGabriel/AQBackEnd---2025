@@ -1,11 +1,7 @@
 package com.project.aqconvert.model
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.TableGenerator
-import java.sql.Date
+import jakarta.persistence.*
+import java.time.LocalDate
 
 
 @Entity
@@ -19,9 +15,10 @@ data class User(
     var id : Long?,
     val nome : String,
     val nomeUsuario : String,
-    val dataNasc : Date,
+    @Column(columnDefinition = "DATE")
+    val dataNasc : LocalDate,
     val email : String,
     val numCelular : String,
-    val senha : String,
+    val senha : String
     //pensar como aplicar as variaveis de imagem
 )

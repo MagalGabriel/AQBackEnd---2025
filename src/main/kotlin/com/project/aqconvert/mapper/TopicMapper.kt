@@ -18,26 +18,26 @@ class TopicMapper(
             id = topic.id,
             materia = topic.materia,
             nome = topic.nome,
-            questions = topic.questions
+            //questions = topic.questions
         )
 
 
     }
 
     fun fromDTO(topicDTO: TopicDTO) : Topic? {
-        val subject = subjectService.procurarPorId(topicDTO.materiaId)
-        val questions = questionService.procurarPorId(topicDTO.questionsId)
-        if (subject != null && questions != null) {
+        //val subject = subjectService.procurarPorId(topicDTO.materiaId)
+        //val questions = questionService.procurarPorId(topicDTO.questionsId)
+        //if (subject != null && questions != null) {
             return Topic(
                 id = topicDTO.id,
-                materia = subject,
+                materia = topicDTO.materia,
                 nome = topicDTO.nome,
-                questions = questions
+                //questions = questions
 
             )
-        }else{
-            return null
-        }
+        //}else{
+        //    return null
+        //}
     }
 
 }

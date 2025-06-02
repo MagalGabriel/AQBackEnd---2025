@@ -1,9 +1,9 @@
 package com.project.aqconvert.mapper
 
-import com.project.aqconvert.model.dtos.UserDTOView
 import com.project.aqconvert.model.User
-import com.project.aqconvert.model.dtos.UserDTO
 import org.springframework.stereotype.Component
+import com.project.aqconvert.model.dtos.UserDTO
+import com.project.aqconvert.model.dtos.UserDTOView
 
 @Component
 class UserMapper {

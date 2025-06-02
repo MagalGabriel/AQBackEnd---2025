@@ -17,11 +17,11 @@ data class Topic(
         pkColumnName = "seq_id",
         valueColumnName = "seq_value")
     var id : Long?,
-    @ManyToOne
-    val materia : Subject,
+    //@ManyToOne
+    val materia : String,
     val nome : String,
-    @OneToMany
-    val questions : Question,
+    //@OneToMany
+    //val questions : Question,
     //pensar como aplicar as variaveis de imagem
 
 
